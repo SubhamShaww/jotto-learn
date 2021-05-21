@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 /**
  * Functional react component for congratulatory message.
@@ -19,5 +20,9 @@ function Congrats({ success }) {
         return <div data-test="component-congrats" />;
     }
 }
+
+Congrats.propTypes = {
+    success: PropTypes.bool.isRequired,
+};
 
 export default Congrats;
