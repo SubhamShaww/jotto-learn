@@ -1,6 +1,8 @@
 import { shallow } from "enzyme";
-import { findbyTestAttr } from "../test/testUtils";
+import { checkProp, findbyTestAttr } from "../test/testUtils";
 import Input from "./Input";
+
+const defaultProps = { secretWord: "secretword" };
 
 /**
  * Factory function to create a ShallowWrapper for the Congrats component.
@@ -8,12 +10,17 @@ import Input from "./Input";
  * @param {object} props - Component props specific to this setup.
  * @returns {ShallowWrapper}
  */
-const setup = () => {
-    return shallow(<Input />);
+const setup = (props = {}) => {
+    const setupProps = { ...defaultProps, ...props };
+    return shallow(<Input {...setupProps} />);
 };
 
 test("renders without error", () => {
     const wrapper = setup();
     const component = findbyTestAttr(wrapper, "component-input");
     expect(component.length).toBe(1);
+});
+
+test("does not throw warning with expected props", () => {
+    checkProp(Input, defaultProps);
 });
