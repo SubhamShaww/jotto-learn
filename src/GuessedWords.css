@@ -1,0 +1,23 @@
+.guessedWords {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.guessedWords h3 {
+    margin: 1rem 0;
+}
+
+table {
+    border: 1px solid black;
+}
+
+th {
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+td {
+    border: 1px solid black;
+    padding: 0.5rem;
+}

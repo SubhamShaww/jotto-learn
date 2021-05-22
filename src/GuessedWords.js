@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./GuessedWords.css";
 
 function GuessedWords(props) {
     let contents;
@@ -18,7 +19,7 @@ function GuessedWords(props) {
         ));
         contents = (
             <div data-test="guessed-words">
-                <h3>GuessedWords</h3>
+                <h3 className="">Guessed Words</h3>
                 <table>
                     <thead>
                         <tr>
@@ -32,7 +33,11 @@ function GuessedWords(props) {
         );
     }
 
-    return <div data-test="component-guessed-words">{contents}</div>;
+    return (
+        <div data-test="component-guessed-words" className="guessedWords">
+            {contents}
+        </div>
+    );
 }
 
 GuessedWords.propTypes = {

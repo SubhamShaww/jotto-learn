@@ -1,0 +1,7 @@
+.congrats {
+    background-color: lightgreen;
+    padding: 1.25rem;
+    border: 1px solid green;
+    border-radius: 1rem;
+    color: green;
+}
