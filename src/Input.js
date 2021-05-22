@@ -1,8 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Input.css";
 
 function Input({ secretWord }) {
-    return <div data-test="component-input"></div>;
+    const [currentGuess, setCurrentGuess] = React.useState("");
+
+    return (
+        <div data-test="component-input" className="input">
+            <form className="input__form">
+                <input
+                    data-test="input-box"
+                    type="text"
+                    placeholder="enter guess"
+                    value={currentGuess}
+                    onChange={(event) => {
+                        setCurrentGuess(event.target.value);
+                    }}
+                />
+                <button data-test="submit-button"></button>
+            </form>
+        </div>
+    );
 }
 
 Input.propTypes = {
