@@ -17,7 +17,15 @@ function Input({ secretWord }) {
                         setCurrentGuess(event.target.value);
                     }}
                 />
-                <button data-test="submit-button"></button>
+                <button
+                    data-test="submit-button"
+                    onClick={(event) => {
+                        event.preventDefault();
+                        // TODO: update guessedWords
+                        // TODO: check against secretWord and update success if needed
+                        setCurrentGuess("");
+                    }}
+                ></button>
             </form>
         </div>
     );
